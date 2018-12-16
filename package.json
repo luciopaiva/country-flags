@@ -1,0 +1,12 @@
+{
+  "name": "country-codes",
+  "version": "1.0.0",
+  "description": "Utility to convert ISO country codes",
+  "main": "parser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Lucio Paiva",
+  "license": "MIT"
+}
