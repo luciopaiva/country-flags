@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Country Flag</title>
+    <title>Country Flags</title>
 
     <link rel="stylesheet" href="dist/country-flag.css">
 
@@ -52,7 +52,7 @@
 </head>
 <body>
 
-<h1>Country flag</h1>
+<h1>Country Flags</h1>
 
 <p>Renders a country's flag based on it's ISO <a href="https://en.wikipedia.org/wiki/ISO_3166-1">3166-1</a> code (alpha-2, alpha-3 or numeric).</p>
 
@@ -83,14 +83,22 @@
     const isoNumericElement = document.querySelector("#sample-country .iso-numeric");
     const topLevelDomainElement = document.querySelector("#sample-country .top-level-domain");
 
-    function pickRandomCountry() {
-        const isoNumeric = flag.randomize();
-        const country = CountryFlag.getCountryByIsoNumeric(isoNumeric);
+    /**
+     * @param {CountryFlagInfo} country
+     */
+    function displayCountry(country) {
+        flag.selectByAlpha2(country.alpha2);
         nameElement.innerText = country.name;
         alpha2Element.innerText = country.alpha2.toUpperCase();
         alpha3Element.innerText = country.alpha3.toUpperCase();
         isoNumericElement.innerText = country.isoNumeric;
         topLevelDomainElement.innerText = `.${country.topLevelDomain}`;
+    }
+
+    function pickRandomCountry() {
+        const isoNumeric = flag.randomize();
+        const country = CountryFlag.getCountryByIsoNumeric(isoNumeric);
+        displayCountry(country);
     }
 
     pickRandomCountry();
