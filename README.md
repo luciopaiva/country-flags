@@ -3,7 +3,7 @@
 
 ![Country flags](dist/country-flag.png)
 
-Simple Javascript/CSS script to display country flags (and also ISO country code info).
+Simple Javascript/CSS script to display country flags (and also ISO country code info). Flags are 32x32 pixels with transparent background.
 
 See it running live [here](https://luciopaiva.com/country-flags).
 
