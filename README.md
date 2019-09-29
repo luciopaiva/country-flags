@@ -1,8 +1,8 @@
 
-# Javascript ISO country codes
+# Country flags
 
-This is a simple script to help converting from/to ISO country codes. It uses the free downloadable CSV file from https://countrycode.org.
+Simple Javascript class to display country flags (and also ISO country code info).
 
-## Flags
+# Acknowledgements
 
-There's also a neat script to convert alpha-2 ISO country codes to flags indexes in an image. See `/flags` (and also see https://www.flag-sprites.com/).
+Thanks [countrycode.org](https://countrycode.org) for providing free ISO data and [flag-sprites.com](https://www.flag-sprites.com/) for free flag images.
