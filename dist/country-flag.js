@@ -10,6 +10,7 @@ class CountryFlag {
         this.element = element;
     }
 
+    // noinspection JSUnusedGlobalSymbols
     /**
      * @return {Number} the ISO numeric code of the selected country
      */
@@ -56,12 +57,51 @@ class CountryFlag {
         return this.selectByMapName(CountryFlag.IDX_NUMERIC, isoNumeric);
     }
 
+    // noinspection JSUnusedGlobalSymbols
+    /**
+     * @param {String} alpha2 the ISO alpha-2 code of the country to be fetched
+     * @return {CountryFlagInfo} an object with info about the country
+     */
+    static getCountryByAlpha2(alpha2) {
+        const country = CountryFlag.getCountryByMapName(CountryFlag.IDX_ALPHA2, alpha2);
+        return CountryFlag.makeCountryFlagInfo(country);
+    }
+
+    // noinspection JSUnusedGlobalSymbols
+    /**
+     * @param {String} alpha3 the ISO alpha-3 code of the country to be fetched
+     * @return {CountryFlagInfo} an object with info about the country
+     */
+    static getCountryByAlpha3(alpha3) {
+        const country = CountryFlag.getCountryByMapName(CountryFlag.IDX_ALPHA3, alpha3);
+        return CountryFlag.makeCountryFlagInfo(country);
+    }
+
+    // noinspection JSUnusedGlobalSymbols
+    /**
+     * @param {String} tld the ISO top-level domain code of the country to be fetched
+     * @return {CountryFlagInfo} an object with info about the country
+     */
+    static getCountryByTopLevelDomain(tld) {
+        const country = CountryFlag.getCountryByMapName(CountryFlag.IDX_TLD, tld);
+        return CountryFlag.makeCountryFlagInfo(country);
+    }
+
+    // noinspection JSUnusedGlobalSymbols
     /**
      * @param {Number} isoNumeric the ISO numeric code of the country to be selected
      * @return {CountryFlagInfo} an object with info about the country
      */
     static getCountryByIsoNumeric(isoNumeric) {
         const country = CountryFlag.getCountryByMapName(CountryFlag.IDX_NUMERIC, isoNumeric);
+        return CountryFlag.makeCountryFlagInfo(country);
+    }
+
+    /**
+     * @private
+     * @return {CountryFlagInfo}
+     */
+    static makeCountryFlagInfo(country) {
         return /** @type {CountryFlagInfo} */ {
             isoNumeric: country[CountryFlag.IDX_NUMERIC],
             name: country[CountryFlag.IDX_NAME],
