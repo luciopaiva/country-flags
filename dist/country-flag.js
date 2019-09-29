@@ -26,7 +26,7 @@ class CountryFlag {
      * @return {Number} the ISO numeric code of the selected country
      */
     selectByAlpha2(alpha2) {
-        return this.selectByMapName(CountryFlag.IDX_ALPHA2, alpha2);
+        return this.selectByMapName(CountryFlag.IDX_ALPHA2, alpha2.toLowerCase());
     }
 
     // noinspection JSUnusedGlobalSymbols
@@ -35,7 +35,7 @@ class CountryFlag {
      * @return {Number} the ISO numeric code of the selected country
      */
     selectByAlpha3(alpha3) {
-        return this.selectByMapName(CountryFlag.IDX_ALPHA3, alpha3);
+        return this.selectByMapName(CountryFlag.IDX_ALPHA3, alpha3.toLowerCase());
     }
 
     // noinspection JSUnusedGlobalSymbols
@@ -44,7 +44,7 @@ class CountryFlag {
      * @return {Number} the ISO numeric code of the selected country
      */
     selectByTopLevelDomain(tld) {
-        return this.selectByMapName(CountryFlag.IDX_TLD, tld);
+        return this.selectByMapName(CountryFlag.IDX_TLD, tld.toLowerCase());
     }
 
     // noinspection JSUnusedGlobalSymbols
