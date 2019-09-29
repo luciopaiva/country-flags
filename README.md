@@ -1,6 +1,8 @@
 
 # Country flags
 
+![Country flags](dist/country-flag.png)
+
 Simple Javascript/CSS script to display country flags (and also ISO country code info).
 
 See it running live [here](https://luciopaiva.com/country-flags).
